@@ -1,15 +1,23 @@
+package de.MinecraftPlugin;
+
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import de.MinecraftPlugin.trade.TradeAcceptCommand;
+import de.MinecraftPlugin.trade.TradeCommand;
+import de.MinecraftPlugin.trade.TradeDelete;
+import de.MinecraftPlugin.trade.TradeDenyCommand;
+
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.UUID;
 
 public class Main extends JavaPlugin {
 
     private File bankFile;
-    private FileConfiguration bankConfig;
+    private FileConfiguration bankConfig;public HashMap<UUID, UUID> tradeRequests = new HashMap<>();
 
     @Override
     public void onEnable() {
@@ -20,6 +28,12 @@ public class Main extends JavaPlugin {
 
         // Command registrieren
         getCommand("bank").setExecutor(new BankCommand(this));
+
+
+        getCommand("trade").setExecutor(new TradeCommand(this));
+        getCommand("tradedelete").setExecutor(new TradeDelete(this));
+        getCommand("tradeaccept").setExecutor(new TradeAcceptCommand(this));
+        getCommand("tradedeny").setExecutor(new TradeDenyCommand(this));
     }
 
     private void createBankFile() {
@@ -56,6 +70,14 @@ public class Main extends JavaPlugin {
     public void addBalance(Player player, double amount) {
         double current = getBalance(player);
         setBalance(player,current + amount);
+    }
+
+    public HashMap<UUID, UUID> getTradeRequests() {
+        return tradeRequests;
+    }
+
+    public void setTradeRequests(HashMap<UUID, UUID> tradeRequests) {
+        this.tradeRequests = tradeRequests;
     }
 
     @Override

@@ -1,6 +1,6 @@
 name: MeinPlugin
 version: 1.0
-main: de.meinplugin.Main
+main: de.MinecraftPlugin.Main
 api-version: 1.21
 author: Mq289
 description: Ein Plugin fuer alles
@@ -10,12 +10,17 @@ commands:
     description: A Function to get every User a own Bank account
     usage: /bank <balance|deposit|withdraw|set|help>
     aliases: [money,konto]
-    permissions: bank.user
+    permissions: P.user
+  trade:
+    description: Trading command for save de.MinecraftPlugin.trade between the Players
+    usage: /de.MinecraftPlugin.trade
+    aliases: [de.MinecraftPlugin.trade,handel]
+    permissions: P.user
 
 permissions:
-  bank.user:
+  P.user:
     description: Allows everyone to get Access to the Commands.
     default: true
-  bank.admin:
+  P.admin:
     description: Allows only Server Operators to use the Commands.
     default: op

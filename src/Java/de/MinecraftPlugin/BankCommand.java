@@ -1,4 +1,5 @@
-import org.bukkit.Bukkit;
+package de.MinecraftPlugin;
+
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -66,7 +67,7 @@ public class BankCommand implements CommandExecutor {
                 }
                 break;
             case "set":
-                if (!player.hasPermission("bank.admin")) {
+                if (!player.hasPermission("P.admin")) {
                     player.sendMessage("§cYou don't have permission for this command!");
                     return true;
                 }
@@ -91,7 +92,7 @@ public class BankCommand implements CommandExecutor {
                 player.sendMessage("§e/bank balance §7- Show your balance");
                 player.sendMessage("§e/bank deposit <Amount> §7- deposit");
                 player.sendMessage("§e/bank withdraw <Amount> §7- withdraw");
-                if (player.hasPermission("bank.admin"))
+                if (player.hasPermission("P.admin"))
                     player.sendMessage("§e/bank set <Player> <Amount> §7- set the balance of the target Player ");
                 break;
 
