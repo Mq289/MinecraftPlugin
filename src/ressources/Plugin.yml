@@ -12,9 +12,9 @@ commands:
     aliases: [money,konto]
     permissions: P.user
   trade:
-    description: Trading command for save de.MinecraftPlugin.trade between the Players
-    usage: /de.MinecraftPlugin.trade
-    aliases: [de.MinecraftPlugin.trade,handel]
+    description: Trading command for save trade between the Players
+    usage: /trade <Player>
+    aliases: [trade,handel]
     permissions: P.user
 
 permissions:

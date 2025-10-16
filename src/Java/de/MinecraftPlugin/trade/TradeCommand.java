@@ -1,9 +1,6 @@
 package de.MinecraftPlugin.trade;
 
 import de.MinecraftPlugin.Main;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.event.ClickEvent;
-import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;

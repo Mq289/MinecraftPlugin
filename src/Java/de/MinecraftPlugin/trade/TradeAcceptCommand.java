@@ -34,7 +34,6 @@ public class TradeAcceptCommand implements CommandExecutor {
             return true;
         }
 
-        // Prüfen ob Anfrage existiert
         if (!plugin.tradeRequests.containsKey(accepter.getUniqueId()) ||
                 !plugin.tradeRequests.get(accepter.getUniqueId()).equals(requester.getUniqueId())) {
             accepter.sendMessage(ChatColor.RED + "Du hast keine Handelsanfrage von diesem Spieler.");
