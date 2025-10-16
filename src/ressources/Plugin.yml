@@ -16,6 +16,11 @@ commands:
     usage: /trade <Player>
     aliases: [trade,handel]
     permissions: P.user
+  invsee:
+    description: a Command to see the Inventory from different Players
+    usage: /invsee <Player>
+    aliases: [inventar,invsee]
+    permissions: P.admin
 
 permissions:
   P.user:

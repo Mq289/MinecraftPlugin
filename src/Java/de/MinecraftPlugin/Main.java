@@ -29,11 +29,12 @@ public class Main extends JavaPlugin {
         // Command registrieren
         getCommand("bank").setExecutor(new BankCommand(this));
 
-
         getCommand("trade").setExecutor(new TradeCommand(this));
         getCommand("tradedelete").setExecutor(new TradeDelete(this));
         getCommand("tradeaccept").setExecutor(new TradeAcceptCommand(this));
         getCommand("tradedeny").setExecutor(new TradeDenyCommand(this));
+
+        getCommand("invsee").setExecutor(new SeeInventory(this));
     }
 
     private void createBankFile() {
