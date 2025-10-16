@@ -1,0 +1,21 @@
+name: MeinPlugin
+version: 1.0
+main: de.meinplugin.Main
+api-version: 1.21
+author: Mq289
+description: Ein Plugin fuer alles
+
+commands:
+  bank:
+    description: A Function to get every User a own Bank account
+    usage: /bank <balance|deposit|withdraw|set|help>
+    aliases: [money,konto]
+    permissions: bank.user
+
+permissions:
+  bank.user:
+    description: Allows everyone to get Access to the Commands.
+    default: true
+  bank.admin:
+    description: Allows only Server Operators to use the Commands.
+    default: op
